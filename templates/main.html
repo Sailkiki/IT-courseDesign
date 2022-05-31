@@ -1,0 +1,90 @@
+{% include 'check_logstate.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>信息管理系统</title>
+    <meta charset="UTF-8"/>
+    <link href="{% static 'easyui/themes/default/easyui.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'easyui/themes/icon.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/admin.css' %}" rel="stylesheet" type="text/css"/>
+</head>
+
+<body class="easyui-layout">
+
+<div data-options="region:'north',title:'header',split:true,noheader:true"
+     style="height:60px;background-color:rgb(108, 175, 135);">
+    <div class="logo">超市商品系统后台管理</div>
+    <div class="logout">您好，{{ request.session.username }}| <a href="{% url 'Index:loginout' %}">退出</a></div>
+</div>
+
+<div data-options="region:'south',title:'footer',split:true,noheader:true"
+     style="height:35px;line-height:30px;text-align:center;">
+</div>
+<div data-options="region:'west',title:'导航',split:true,iconCls:'icon-world'" style="width:200px;padding:10px;">
+    <ul class="tree tree-lines" id="nav">
+        <li>
+            <div class="tree-node tree-root-first" id="_easyui_tree_1">
+				<span class="tree-hit tree-expanded">
+
+				</span>
+                <span class="tree-icon tree-folder icon-system tree-folder-open">
+
+				</span>
+                <span class="tree-title">商品管理</span>
+            </div>
+            <ul style="display: block;">
+                <li>
+                    <div class="tree-node" id="_easyui_tree_2">
+                        <span class="tree-indent tree-line"></span>
+                        <span class="tree-indent tree-join"></span>
+                        <span class="tree-icon tree-file icon-add-new"></span>
+                        <span class="tree-title">添加商品</span></div>
+                </li>
+                <li>
+                    <div class="tree-node tree-node-last tree-node-selected" id="_easyui_tree_3">
+                        <span class="tree-indent tree-line"></span><span class="tree-indent tree-joinbottom">
+
+			</span><span class="tree-icon tree-file icon-manager"></span><span class="tree-title">商品管理</span></div>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="tree-node tree-node-last" id="_easyui_tree_4"><span class="tree-hit tree-expanded"></span><span
+                    class="tree-icon tree-folder icon-system tree-folder-open"></span><span
+                    class="tree-title">系统管理</span></div>
+            <ul style="display: block;">
+                <li>
+                    <div class="tree-node" id="_easyui_tree_5"><span class="tree-indent"></span><span
+                            class="tree-indent tree-join"></span><span
+                            class="tree-icon tree-file icon-manager"></span><span class="tree-title">修改商品测试</span></div>
+                </li>
+                <li>
+                    <div class="tree-node tree-node-last" id="_easyui_tree_6"><span class="tree-indent"></span><span
+                            class="tree-indent tree-joinbottom"></span><span
+                            class="tree-icon tree-file icon-edit"></span><span class="tree-title">修改密码</span></div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div data-options="region:'center'" style="overflow:hidden;">
+    <div id="tabs">
+        <div iconCls="icon-house" style="padding:0 10px;display:block;font-size:70px" title="起始页">
+            <br/><br/>
+            <center>欢迎来到后台管理系统！</center>
+        </div>
+    </div>
+</div>
+
+
+<script src="{% static 'easyui/jquery.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'easyui/jquery.easyui.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'easyui/locale/easyui-lang-zh_CN.js' %}" type="text/javascript"></script>
+<script src="{% static 'tiny_mce/tiny_mce.js' %}"></script>
+<script src="{% static 'js/admin.js' %}" type="text/javascript"></script>
+
+
+</body>
+</html>
